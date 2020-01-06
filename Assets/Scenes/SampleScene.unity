@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641252, b: 0.5748167, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -317,6 +317,13 @@ GameObject:
   - component: {fileID: 362581913}
   - component: {fileID: 362581912}
   - component: {fileID: 362581916}
+  - component: {fileID: 1565790184}
+  - component: {fileID: 1565790183}
+  - component: {fileID: 1565790182}
+  - component: {fileID: 1565790181}
+  - component: {fileID: 1565790179}
+  - component: {fileID: 1565790185}
+  - component: {fileID: 1565790180}
   m_Layer: 0
   m_Name: wall2
   m_TagString: Untagged
@@ -326,6 +333,37 @@ GameObject:
   m_IsActive: 1
 --- !u!65 &362581912
 BoxCollider:
+--- !u!54 &1565790179
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1565790178}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &1565790180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1565790178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8fad22988e0ab54298c772e15c5f2c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bombObj: {fileID: 0}
+--- !u!135 &1565790181
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
