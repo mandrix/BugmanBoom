@@ -14,7 +14,8 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        Vector3 Moving = new Vector3(0, 0, 0);
+
+		Vector3 Moving = new Vector3(0, 0, 0);
         if (Input.GetKey(KeyCode.A))
             Moving = Vector3.left;
         else if (Input.GetKey(KeyCode.D))
