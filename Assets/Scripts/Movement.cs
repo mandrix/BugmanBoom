@@ -5,6 +5,9 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     public Rigidbody rb;
+    [Range(1,5)]
+    public float speed;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,23 +17,21 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        Vector3 Moving = new Vector3(0, 0, 0);
+        Vector3 Moving = rb.velocity * -1;
         if (Input.GetKey(KeyCode.A))
-            Moving = Vector3.left;
+            Moving.x -= speed;
         else if (Input.GetKey(KeyCode.D))
-            Moving = Vector3.right;
+            Moving.x += speed;
         else if (Input.GetKey(KeyCode.W))
-            Moving = Vector3.up;
+            Moving.y += speed;
         else if (Input.GetKey(KeyCode.S))
-            Moving = Vector3.down;
-        else
-            Moving = rb.velocity * -1;
+            Moving.y -= speed;
         MovingObject(Moving);
     }
 
     void MovingObject(Vector3 Vector)
     {
-        rb.AddForce(Vector);
+        rb.velocity += Vector;
     }
 }
 
