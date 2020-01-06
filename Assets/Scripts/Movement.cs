@@ -23,9 +23,9 @@ public class Movement : MonoBehaviour
         else if (Input.GetKey(KeyCode.D))
             Moving.x += speed;
         else if (Input.GetKey(KeyCode.W))
-            Moving.y += speed;
+            Moving.z += speed;
         else if (Input.GetKey(KeyCode.S))
-            Moving.y -= speed;
+            Moving.z -= speed;
         MovingObject(Moving);
     }
 
