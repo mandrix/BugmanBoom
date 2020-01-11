@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelBase: 1
-  rangePerLvl: 4
+  rangePerLvl: 10
   hpPerLvl: 1
   speedPerLvl: 1
   players: []

@@ -36,6 +36,7 @@ public class MovementEnemy : MonoBehaviour
     void Update()
     {
         updateDistances();
+        findPlayer();
     }
 
     //Custom Function
@@ -45,6 +46,7 @@ public class MovementEnemy : MonoBehaviour
         players = GameObject.FindGameObjectsWithTag("Players");
         distance = new float [players.Length];
     }
+
     void setStats()
     {
         range = rangePerLvl * level;
@@ -53,22 +55,34 @@ public class MovementEnemy : MonoBehaviour
 
     }
 
-    void updateDistances() {
+    void updateDistances()
+    {
         
         GameObject player;
         int index = 0;
         int len = players.Length;
-        for (; len != index; index++ ) {
+        for (; len != index; index++ )
+        {
             player = players[index];
             var heading = transform.position - player.transform.position;
             distance[index] = heading.magnitude;
         }
     }
 
-    void findPlayer() {
+    void findPlayer()
+    {
+        int index = 0;
+        int len = players.Length;
+        for (; len != index; index++)
+        {
+            if (range >= distance[index]) {
+                follow(players[index]);
+                break;
+            }
+        }
     }
 
-    void follow(){
+    void follow(GameObject player){
     }
 }
 
