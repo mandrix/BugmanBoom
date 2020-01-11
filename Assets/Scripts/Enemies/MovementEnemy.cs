@@ -19,6 +19,7 @@ public class MovementEnemy : MonoBehaviour
     private int level;
     private double range;
     private double speed;
+    private double hp;
     public GameObject[] players;
     private float[] distance; 
 
@@ -49,7 +50,7 @@ public class MovementEnemy : MonoBehaviour
     {
         range = rangePerLvl * level;
         speed = speedPerLvl * level;
-        hpPerLvl = hpPerLvl * level;
+        hp = hpPerLvl * level;
 
     }
 
