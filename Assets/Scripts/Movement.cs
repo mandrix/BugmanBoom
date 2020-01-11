@@ -8,13 +8,12 @@ public class Movement : MonoBehaviour
     [Range(1,5)]
     public float speed;
 
-    // Start is called before the first frame update
+    // Unity function
     void Start()
     {
 
     }
 
-    // Update is called once per frame
     private void Update()
     {
         Vector3 Moving = rb.velocity * -1;
@@ -28,7 +27,9 @@ public class Movement : MonoBehaviour
             Moving.z -= speed;
         MovingObject(Moving);
     }
+    
 
+    //Custom Function
     void MovingObject(Vector3 Vector)
     {
         rb.velocity += Vector;
