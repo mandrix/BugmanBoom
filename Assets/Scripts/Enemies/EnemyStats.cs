@@ -7,6 +7,8 @@ public class EnemyStats : MonoBehaviour
 
     public int levelBase;
 
+	public string[] hazardTags;
+
     [Range(0, 10)]
     public float rangePerLvl;
 
@@ -44,7 +46,30 @@ public class EnemyStats : MonoBehaviour
         
     }
 
-    void setStats()
+	private void OnTriggerEnter(Collider other)
+	{
+		if (other.GetComponent<HazardData>())
+		{
+			foreach (var hazardTag in hazardTags)
+			{
+				if (other.GetComponent<HazardData>().hazard.hazardObjectName == hazardTag)
+				{
+					hp -= other.GetComponent<HazardData>().hazard.damagePoints;
+
+					if (hp <= 0)
+						Die();
+				}
+			}
+		}
+	}
+
+	private void Die()
+	{
+
+	}
+
+
+	void setStats()
     {
         range = rangePerLvl * level;
         speed = speedPerLvl * level;
