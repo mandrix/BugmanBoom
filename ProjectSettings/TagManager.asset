@@ -7,6 +7,9 @@ TagManager:
   - Enemies
   - Players
   - Hazard
+  - Obstacle
+  - Corners
+  - Points
   layers:
   - Default
   - TransparentFX
