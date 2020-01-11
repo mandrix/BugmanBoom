@@ -23,7 +23,7 @@ public class EnemyColider : MonoBehaviour
     {   
         if(other.CompareTag(playerTag))
         {
-            Function.follow(other.transform);
+            Function.Follow(other.transform);
         }
     }
 }
