@@ -111,6 +111,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c9383a4411138c4c8e1dd66cc588d2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  referencePoint: {fileID: 94622914058883671, guid: 1cca1e5ef6963914b8968db663caafa3,
+    type: 3}
 --- !u!114 &7501282058735608076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,10 +206,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8bef14429d6442548ce20dd64078532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
   rotationSpeed: 20
   walkingSpeed: 2
   reachedKnot: 1
+  target: {fileID: 0}
 --- !u!1 &7501282057955054343
 GameObject:
   m_ObjectHideFlags: 0

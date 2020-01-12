@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 
+
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,8 +14,9 @@ public class MovementEnemy : MonoBehaviour
     private GameObject referenceCopy;
     private float maxX;
     private float minX;
-    private float maxY;
-    private float minY;
+    private float maxZ;
+    private float minZ;
+
     // Unity function
     void Start()
     {
@@ -43,19 +45,20 @@ public class MovementEnemy : MonoBehaviour
     void SearchCorner()
     {
         GameObject[] corners = GameObject.FindGameObjectsWithTag("Corners");
-        maxX = corners[0].transform.position.x + corners[1].transform.position.x;
         minX = Mathf.Min(corners[0].transform.position.x, corners[1].transform.position.x);
-        maxY = corners[0].transform.position.y + corners[1].transform.position.y;
-        minY = Mathf.Min(corners[0].transform.position.y, corners[1].transform.position.y);
+        maxX = (corners[0].transform.position.x + corners[1].transform.position.x) - minX;
+        minZ = Mathf.Min(corners[0].transform.position.z, corners[1].transform.position.z);
+        maxZ = (corners[0].transform.position.z + corners[1].transform.position.z) - minZ;
     }
 
-    Vector3 APoint() {         
-        return new Vector3(Random.Range(minX, maxX), 0, Random.Range(minY, maxY)); ;
+    Vector3 APoint() {
+        Vector3 vec = new Vector3(Random.Range(minX, maxX), 0, Random.Range(minZ, maxZ));
+        return vec ;
     }
 
     public void Follow(Transform playerTf)
     {
-        Debug.Log(playerTf.position);
+        //Debug.Log(playerTf.position);
     }
 
 
