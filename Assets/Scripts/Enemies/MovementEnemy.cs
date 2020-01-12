@@ -17,7 +17,7 @@ public class MovementEnemy : MonoBehaviour
     private float minX;
     private float maxZ;
     private float minZ;
-
+    private bool chasePlayer;
     // Unity function
     void Start()
     {
@@ -28,7 +28,7 @@ public class MovementEnemy : MonoBehaviour
 
     void Update()
     {
-        if (time <= 0)
+        if (time <= 0 && !chasePlayer)
         {
             Call();
             time = _time;
@@ -66,9 +66,13 @@ public class MovementEnemy : MonoBehaviour
 
     public void Follow(Transform playerTf)
     {
-        //Debug.Log(playerTf.position);
+        chasePlayer = true;
+        Function.SetTarget(playerTf);
     }
 
-
+    public void NotFollow() {
+        chasePlayer = false;
+        Call();
+    }
 }
 

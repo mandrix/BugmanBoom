@@ -26,4 +26,12 @@ public class EnemyColider : MonoBehaviour
             Function.Follow(other.transform);
         }
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag(playerTag))
+        {
+            Function.NotFollow();
+        }
+    }
 }
