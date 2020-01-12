@@ -21,7 +21,6 @@ public class RotateToMouse : MonoBehaviour
 
 			if (Physics.Raycast(ray, out hit))
 			{
-				Debug.Log(hit.point);
 				RotateToMouseDirection(gameObject, hit.point);
 				// Do something with the object that was hit by the raycast.
 			}

@@ -9,11 +9,11 @@ public class HazardData : MonoBehaviour
 
 	private void OnTriggerEnter(Collider other)
 	{
-		Debug.Log(string.Format("{0} {1}", other, other.tag));
+		//Debug.Log(string.Format("{0} {1}", other, other.tag));
 	}
 
 	private void OnCollisionEnter(Collision collision)
 	{
-		Debug.Log(string.Format("{0} {1}", collision, collision.gameObject.tag));
+		//Debug.Log(string.Format("{0} {1}", collision, collision.gameObject.tag));
 	}
 }
